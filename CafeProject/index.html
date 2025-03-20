@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cafe</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="navbar-container">
+      <ul class="navbar-menu">
+        <li><a href="index.html" class="navbar-link">Home</a></li>
+        <li><a href="menu.html" class="navbar-link">Menu</a></li>
+        <li><a href="Aboutus.html" class="navbar-link">About US</a></li>
+        <li><a href="gallery.html" class="navbar-link">Gallery</a></li>
+        <li><a href="login.html" class="navbar-link">Login</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="firstpage">
+    <div class="left">
+      <h1 style="font-weight: bolder; font-size: 2.5rem;">White Chillies</h1>
+      <P style="text-align: center;">Welcome to White Chillies, where a love for delicious food meets a commitment to
+        exceptional customer satisfaction. White Chillies journey began with a heartfelt desire to share amazing flavors
+        and unforgettable dining experiences.❤😊</P>
+      <button><a href="menu.html">Order now</a></button>
+    </div>
+    <div class="right">
+      <img src="rotateimg.jpg" alt="">
+    </div>
+  </div>
+  <br>
+  <br>
+  <h3 style="text-align: center; padding-bottom: 0px; margin: 0px;">Customer Reviews</h3>
+  <h1 style="text-align: center;">Look what our Customers have to say</h1>
+  <div class="container">
+
+    <div class="box">
+      <h3>Harsh Gandhi</h3>
+      <p>One of the best budget-friendly Cafe. Quantity & quality both are good. Service is good. Best place to chill
+        with friends and family</p>
+    </div>
+    <div class="box">
+      <h3>Ambika Rathi</h3>
+      <p>Good quality food, awesome taste, nice infrastructure and in budget cafe. Must visit with your friends and
+        family</p>
+    </div>
+    <div class="box">
+      <h3>Shivansh Mantri</h3>
+      <p>It was an amazing experience in White Chillies. U can hangout with friends,go on date,go out families.It serves
+        amazing and yummy food with fabulous decoration and staff is also very kind</p>
+    </div>
+    <div class="box">
+      <h3>Neha Jain</h3>
+      <p>Cozy café with great ambiance, delicious coffee, and friendly staff. Perfect for relaxing or catching up with
+        friends</p>
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <h3 style="text-align: center; padding-bottom: 0px; margin: 0px;">White Chillies</h3>
+  <h1 style="text-align: center;">Our Best Sellers</h1>
+  <div class="slideshow-container">
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <div class="slide">
+      <img src="img1.jpg">
+      <img src="Pasta.jpg">
+      <img src="img3.jpg">
+    </div>
+    <div class="slide">
+      <img src="Pasta.jpg">
+      <img src="img3.jpg">
+      <img src="img4.jpg">
+    </div>
+    <div class="slide">
+      <img src="img3.jpg">
+      <img src="img4.jpg">
+      <img src="img5.jpg">
+    </div>
+    <div class="slide">
+      <img src="img4.jpg">
+      <img src="img5.jpg">
+      <img src="img6.jpg">
+    </div>
+    <div class="slide">
+      <img src="img5.jpg">
+      <img src="img6.jpg">
+      <img src="img7.jpg">
+    </div>
+    <div class="slide">
+      <img src="img6.jpg">
+      <img src="img7.jpg">
+      <img src="img8.jpeg">
+    </div>
+    <div class="slide">
+      <img src="img7.jpg">
+      <img src="img8.jpeg">
+      <img src="img9.jpg">
+    </div>
+    <div class="slide">
+      <img src="img8.jpeg">
+      <img src="img9.jpg">
+      <img src="img1.jpg">
+    </div>
+    <div class="slide">
+      <img src="img9.jpg">
+      <img src="img1.jpg">
+      <img src="Pasta.jpg">
+    </div>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+  <br>
+
+  <div style="text-align:center">
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
+  <footer class="footer">
+    <p>&copy; 2025 White Chillies. All Rights Reserved.</p>
+  </footer>
+  <script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("slide");
+      let dots = document.getElementsByClassName("dot");
+      if (n > slides.length) { slideIndex = 1 }
+      if (n < 1) { slideIndex = slides.length }
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].className += " active";
+    }
+    function autoSlides() {
+      plusSlides(1);
+      setTimeout(autoSlides, 2000);
+    }
+    autoSlides();
+  </script>
+</body>
+
+</html>

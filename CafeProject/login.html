@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .navbar {
+            background-color: #333;
+            color: #fff;
+            padding: 0px 20px;
+            position: sticky;
+            height: 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            top: 0;
+            z-index: 2;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .navbar-menu {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar-link {
+            text-decoration: none;
+            color: #fff;
+            margin: 0 20px;
+            font-size: 1.2rem;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .navbar-link:hover {
+            color: #ff9900;
+            transform: scale(1.1);
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 80vh;
+        }
+
+        header {
+            background-color: #fec20c;
+            padding: 15px 50px;
+            text-align: center;
+            width: 92vw;
+            font-size: 1.5rem;
+            font-weight: bold;
+            border-radius: 8px;
+        }
+        .form-container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-weight: 500;
+            margin: 8px 0 5px;
+            text-align: left;
+        }
+
+        input {
+            border: 2px solid black;
+            height: 40px;
+            border-radius: 8px;
+            width: 100%;
+            padding-left: 10px;
+            font-size: 1rem;
+            transition: 0.3s ease;
+        }
+
+        /* Login Button Styling */
+        .login-button {
+            margin-top: 15px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            height: 40px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .login-button:hover {
+            background-color: #218838;
+            transform: scale(1.05);
+        }
+
+        .footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <ul class="navbar-menu">
+                <li><a href="index.html" class="navbar-link">Home</a></li>
+                <li><a href="menu.html" class="navbar-link">Menu</a></li>
+                <li><a href="Aboutus.html" class="navbar-link">About US</a></li>
+                <li><a href="gallery.html" class="navbar-link">Gallery</a></li>
+                <li><a href="login.html" class="navbar-link">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header>Login</header>
+        <div class="form-container">
+            <form id="loginForm">
+                <label for="name">Enter the username:</label>
+                <input type="text" id="name" placeholder="Username" >
+
+                <label for="contact">Enter the contact number:</label>
+                <input type="number" id="contact" placeholder="Phone number" >
+
+                <label for="email">Enter your email:</label>
+                <input type="email" id="email" placeholder="Email" >
+
+                <label for="password">Enter your password:</label>
+                <input type="password" id="password" placeholder="Password" >
+
+                <button type="submit" class="login-button" onclick="completeOrder()">Login</button>
+                <h5>Don't have an accout ?</h5><a href="Registration.html">Register here</a>
+            </form>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2025 White Chillies. All Rights Reserved.</p>
+    </footer>
+<script>
+    function validateForm() {
+        let name = document.getElementById("name").value.trim();
+        let contact = document.getElementById("contact").value.trim();
+        let email = document.getElementById("email").value.trim();
+        let password = document.getElementById("password").value.trim();
+        let errorMessages = [];
+
+        if (name === "") {
+            errorMessages.push("⚠️ Name is required.");
+        }
+        if (contact === "" || !/^\d{10}$/.test(contact)) { // Fixed the variable name here
+            errorMessages.push("⚠️ Enter a valid 10-digit phone number.");
+        }
+        if (email === "" || !email.includes("@") || !email.includes(".")) {
+            errorMessages.push("⚠️ Enter a valid email id.");
+        }
+        if (password === "") {
+            errorMessages.push("⚠️ Enter a valid password.");
+        }
+
+        if (errorMessages.length > 0) {
+            alert("Please fix the following errors:\n\n" + errorMessages.join("\n"));
+            return false;
+        }
+
+        return true;
+    }
+
+    function completeOrder(event) {
+        event.preventDefault(); // Prevents form submission if validation fails
+        if (validateForm()) {
+            alert("✅ Your Login is Successful!!");
+        }
+    }
+
+    document.getElementById("loginForm").addEventListener("submit", completeOrder);
+</script>
+
+</body>
+
+</html>
