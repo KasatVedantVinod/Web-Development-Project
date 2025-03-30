@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,14 +10,13 @@
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
     <style>
-        * {
+        *{
             margin: 0px;
             padding: 0px;
             font-family: "Poppins";
             box-sizing: border-box;
         }
-
-        .navbar {
+        .navbar{
             background-color: #333;
             color: #fff;
             padding: 0px 20px;
@@ -32,23 +30,20 @@
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             font-family: 'Poppins', sans-serif;
         }
-
-        .navbar-container {
+        .navbar-container{
             display: flex;
             justify-content: space-between;
             align-items: center;
             max-width: 1200px;
             margin: 0 auto;
         }
-
-        .navbar-menu {
+        .navbar-menu{
             display: flex;
             list-style: none;
             margin: 0;
             padding: 0;
         }
-
-        .navbar-link {
+    .navbar-link{
             text-decoration: none;
             color: #fff;
             margin: 0 20px;
@@ -56,13 +51,11 @@
             position: relative;
             transition: color 0.3s, transform 0.3s;
         }
-
-        .navbar-link:hover {
+        .navbar-link:hover{
             color: #ff9900;
             transform: scale(1.1);
         }
-
-        .navbar-link::after {
+        .navbar-link::after{
             content: '';
             position: absolute;
             bottom: -5px;
@@ -72,20 +65,17 @@
             background-color: #ff9900;
             transition: width 0.3s ease, left 0.3s ease;
         }
-
-        .navbar-link:hover::after {
+        .navbar-link:hover::after{
             width: 100%;
             left: 0;
         }
-
-        .container {
+        .container{
 
             margin: auto;
             transition: 0.5s;
             max-width: 100vw;
         }
-
-        header {
+        header{
             position: sticky;
             top: 100px;
             background-color: #fec20c;
@@ -96,21 +86,17 @@
             padding: 15px 80px;
             height: 90px;
         }
-
-        .shoppingBasket {
+        .shoppingBasket{
             position: relative;
         }
-
-        .shoppingBasket:hover {
+        .shoppingBasket:hover{
             cursor: pointer;
         }
-
         .shoppingBasket img {
             height: 40px;
             border-radius: 20%;
         }
-
-        .shoppingBasket .quantity {
+        .shoppingBasket .quantity{
             background-color: red;
             border-radius: 50%;
             display: flex;
@@ -122,8 +108,7 @@
             top: -10px;
             left: 35px;
         }
-
-        .products {
+        .products{
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             row-gap: 25px;
@@ -131,16 +116,14 @@
             margin: 10px;
             padding: 20px;
         }
-
-        .products .item {
+        .products .item{
             text-align: center;
             padding: 20px;
             line-height: 30px;
             border-radius: 20px;
             box-shadow: 0 0px 20px rgba(0, 0, 0, 0.526);
         }
-
-        .products button {
+        .products button{
             height: 40px;
             background-color: #fec20c;
             font-weight: bold;
@@ -149,8 +132,7 @@
             border-radius: 15px;
             text-align: center;
         }
-
-        .products button:hover {
+        .products button:hover{
             cursor: pointer;
             background-color: #94771e;
         }
@@ -166,12 +148,10 @@
             scale: 1.1;
             transition: 0.5s;
         }
-
-        .products .item .price {
+        .products .item .price{
             margin: 12px;
         }
-
-        .cart {
+        .cart{
             position: fixed;
             top: 0;
             right: -400px;
@@ -181,16 +161,14 @@
             background-color: #453e3b;
             transition: right 3 ease;
         }
-
-        .cart h3 {
+        .cart h3{
             padding-top: 40px;
             font-weight: 100;
             color: white;
             text-align: center;
             margin-top: 10px;
         }
-
-        .cart .checkout {
+        .cart .checkout{
             position: absolute;
             bottom: 0;
             width: 100%;
@@ -199,8 +177,7 @@
                                  "money money";
 
         }
-
-        .cart .checkout .total {
+        .cart .checkout .total{
             width: 100%;
             height: 60px;
             display: flex;
@@ -211,8 +188,7 @@
             cursor: pointer;
             background-color: beige;
         }
-
-        .cart .checkout .close {
+        .cart .checkout .close{
             width: 100%;
             height: 60px;
             display: flex;
@@ -224,17 +200,14 @@
             color: white;
             background-color: rgba(159, 225, 233, 0.329);
         }
-
-        .active .cart {
+        .active .cart{
             right: 0;
         }
-
-        .productlist {
+        .productlist{
             padding: 15px;
             height: auto;
         }
-
-        .productlist li {
+        .productlist li{
             display: grid;
             height: 90px;
             grid-template-columns: 100px repeat(3, 1fr);
@@ -243,33 +216,29 @@
             margin-bottom: 10px;
             border: 1px solid;
         }
-        .productlist li img {
+        .productlist li img{
             height: 88px;
             width: 65px;
             background-color: white;
         }
-
-        .productlist li div {
+        .productlist li div{
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 10px;
             margin: 1px;
         }
-
-        .productlist li button {
+        .productlist li button{
             height: 25px;
             width: 25px;
             border-radius: 50%;
             border: none;
             cursor: pointer;
         }
-
-        .productlist li .count {
+        .productlist li .count{
             padding: 10px;
         }
-
-        .order-now {
+        .order-now{
             background-color: #ff9900;
             color: white;
             padding: 10px;
@@ -279,12 +248,10 @@
             width: 100%;
             text-align: center;
         }
-
-        .order-now:hover {
+        .order-now:hover{
             background-color: #cc7a00;
         }
-
-        .order-form-container {
+        .order-form-container{
             display: none;
             position: fixed;
             z-index: 10;
@@ -297,8 +264,7 @@
             justify-content: center;
             align-items: center;
         }
-
-        .order-form {
+        .order-form{
             background: white;
             padding: 20px;
             padding-left: 40px;
@@ -307,22 +273,18 @@
             text-align: center;
             width: 300px;
         }
-
-        .order-form input,
-        .order-form textarea {
+        .order-form input, .order-form textarea{
             width: 100%;
             padding: 8px;
             margin: 10px 0;
             border: 1px solid #ccc;
             border-radius: 5px;
         }
-
-        .order-total {
+        .order-total{
             font-weight: bold;
             margin: 10px 0;
         }
-
-        .order-form button {
+        .order-form button{
             width: 100%;
             padding: 10px;
             margin-top: 10px;
@@ -333,30 +295,25 @@
             cursor: pointer;
             transition: background 0.3s, transform 0.2s;
         }
-
-        .order-form button:first-of-type {
+        .order-form button:first-of-type{
             background-color: #28a745;
             /* Green for Complete Order */
             color: white;
         }
-
-        .order-form button:first-of-type:hover {
+        .order-form button:first-of-type:hover{
             background-color: #218838;
             transform: scale(1.05);
         }
-
-        .order-form button:last-of-type {
+        .order-form button:last-of-type{
             background-color: #dc3545;
             /* Red for Cancel */
             color: white;
         }
-
-        .order-form button:last-of-type:hover {
+        .order-form button:last-of-type:hover{
             background-color: #c82333;
             transform: scale(1.05);
         }
-
-        .footer {
+        .footer{
             background-color: #333;
             color: #fff;
             text-align: center;
@@ -405,7 +362,6 @@
             <input type="text" id="name" required>
             <label>Phone Number:</label>
             <input type="text" id="phone" required>
-
             <label>Address:</label>
             <textarea id="address" required></textarea>
             <div class="order-total" id="orderTotal">Total: ₹0</div>
@@ -491,7 +447,7 @@
         body.classList.remove("active");
     }
     function onInIt() {
-        sandwiches.forEach((item, key) => {
+        sandwiches.forEach((item, key) =>{
             let div = document.createElement("div");
             div.classList.add("item");
             div.innerHTML = `<img src="${item["image"]}"/>
@@ -502,16 +458,16 @@
         });  
     }
     onInIt();
-    function addToCart(id) {
-        if (checkoutList[id] == null) {
+    function addToCart(id){
+        if (checkoutList[id] == null){
             checkoutList[id] = sandwiches[id];
             checkoutList[id].quantity = 1;
-        } else {
+        }else{
             checkoutList[id].quantity += 1;
         }
         reloadcart();
     }
-    function reloadcart() {
+    function reloadcart(){
         productlist.innerHTML = "";
         let count = 0;
         let totalprice = 0;
@@ -536,18 +492,18 @@
         });
 
     }
-    function changeQunatity(key, quantity) {
-        if (quantity == 0) {
+    function changeQunatity(key, quantity){
+        if (quantity == 0){
             delete checkoutList[key];
             total.innerHTML = `<small> Subtotal (0 items: )</small>₹0`;
-        } else {
+        }else{
             checkoutList[key].quantity = quantity;
         }
         reloadcart();
     }
-    function showOrderForm() {
+    function showOrderForm(){
         let cartIsEmpty = checkoutList.every(item => item === undefined);
-        if (cartIsEmpty) {
+        if (cartIsEmpty){
             alert("You have to add items in cart");
             return;
         }
@@ -555,12 +511,10 @@
         let totalText = total.innerText.replace(/Subtotal \(\d+ items\) : /, "Total: ₹");
         document.getElementById("orderTotal").innerText = totalText; // Show total amount
     }
-
     function closeOrderForm() {
         document.getElementById("orderForm").style.display = "none";
     }
-
-    function validateForm() {
+    function validateForm(){
         let name = document.getElementById("name").value.trim();
         let phone = document.getElementById("phone").value.trim();
 
@@ -568,26 +522,22 @@
 
         let errorMessages = [];
 
-        // Name validation
-        if (name === "") {
+        if (name === ""){
             errorMessages.push("⚠️ Name is required.");
         }
 
-        // Phone number validation (10 digits)
-        if (phone === "" || !/^\d{10}$/.test(phone)) {
+
+        if (phone === "" || !/^\d{10}$/.test(phone)){
             errorMessages.push("⚠️ Enter a valid 10-digit phone number.");
         }
 
-        // Contact number validation (10 digits)
 
-
-        // Address validation
-        if (address === "") {
+        if (address === ""){
             errorMessages.push("⚠️ Address is required.");
         }
 
         // If there are errors, show an alert
-        if (errorMessages.length > 0) {
+        if (errorMessages.length > 0){
             alert("Please fix the following errors:\n\n" + errorMessages.join("\n"));
             return false;
         }
@@ -595,8 +545,8 @@
         return true;
     }
 
-    function completeOrder() {
-        if (validateForm()) {
+    function completeOrder(){
+        if (validateForm()){
             alert("✅ Your order has been successfully completed!");
             closeOrderForm();
         }
